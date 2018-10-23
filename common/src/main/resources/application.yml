@@ -1,0 +1,10 @@
+#redis配置
+redisson:
+  address: redis://192.168.196.196:6379
+  #password: xefredis13579@#$%
+  #sentinelAddresses:
+  #masterName:
+
+#rocketMQ配置
+rocketmq:
+    namesrvAddr: 192.168.196.196:9876

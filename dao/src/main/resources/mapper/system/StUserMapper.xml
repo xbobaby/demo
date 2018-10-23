@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.system.mapper.StUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bob.system.entity.StUser">
+        <id column="PKID" property="pkid" />
+        <result column="CODE" property="code" />
+        <result column="NAME" property="name" />
+        <result column="PHONE" property="phone" />
+        <result column="TELPHONE" property="telphone" />
+        <result column="EMAIL" property="email" />
+        <result column="PASSWORD" property="password" />
+        <result column="STATUS" property="status" />
+        <result column="CREATE_USER" property="createUser" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="LOGIN_TIME" property="loginTime" />
+        <result column="LOGIN_IP" property="loginIp" />
+        <result column="UPDATE_USER" property="updateUser" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="LOGOUT_TIME" property="logoutTime" />
+        <result column="ONLINE_STATUS" property="onlineStatus" />
+        <result column="ONLINE_SET" property="onlineSet" />
+        <result column="SEX" property="sex" />
+        <result column="ORG_TYPE" property="orgType" />
+        <result column="CHAN_POST" property="chanPost" />
+        <result column="DEPT_ID" property="deptId" />
+        <result column="CHAN_ID" property="chanId" />
+        <result column="CITY_LIMIT" property="cityLimit" />
+        <result column="CHAN_LIMIT" property="chanLimit" />
+        <result column="IP_CONTROL_FLAG" property="ipControlFlag" />
+        <result column="PWD_EXP_TIME" property="pwdExpTime" />
+        <result column="RESERVE_MSG" property="reserveMsg" />
+        <result column="NEED_CHG_PWD" property="needChgPwd" />
+        <result column="SESSION_ID" property="sessionId" />
+    </resultMap>
+
+    <select id="selectUserByDeptId" resultType="com.bob.system.entity.StUser">
+        SELECT * FROM st_user where dept_id like CONCAT('%', #{user.deptId}, '%')
+    </select>
+</mapper>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+<div id="list">
+    <p>{{ message }}</p>
+    <input v-model="message"/>
+</div>
+<script>
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+
+    var list = document.getElementById("list");
+
+    for (let i = 1; i <= 5; i++) {
+        var item = document.createElement("LI");
+        item.appendChild(document.createTextNode("Item " + i));
+
+            var j = i;
+        item.onclick = function (ev) {
+            console.log("Item " + j + " is clicked.");
+        };
+        list.appendChild(item);
+    }
+</script>
+</body>
+</html>
