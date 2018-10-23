@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication  {
-    org.slf4j.Logger Logger = LoggerFactory.getLogger(DemoApplication.class);
+/*    org.slf4j.Logger Logger = LoggerFactory.getLogger(DemoApplication.class);
 
     @Autowired
     DoSTH doSTH;
@@ -19,7 +19,7 @@ public class DemoApplication  {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 /*    @Override
     public void run(String... args) throws Exception {

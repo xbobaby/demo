@@ -3,6 +3,7 @@ package com.bob.system.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.bob.common.vo.RO;
 import com.bob.system.entity.StUser;
 import com.bob.system.service.IStUserService;
 import io.swagger.annotations.Api;
@@ -30,16 +31,16 @@ public class StUserController {
     @Reference(version = "${bob.service.version}")
     IStUserService stUserService;
 
-    @RequestMapping(value = "/allusers", produces = {"application/json;charset=UTF-8"})
-    public List getAllUser(){
+    @PostMapping(value = "/allusers", produces = {"application/json;charset=UTF-8"})
+    public RO getAllUser(){
         List list = stUserService.listMaps(null);
-        return list;
+        return new RO().put("list",list);
     }
 
     @PostMapping(value = "/getUserByDeptId", produces = {"application/json;charset=UTF-8"})
     @ApiOperation(value = "根据传入的user对象分页查询用户" , notes = "值通过user传入" )
-    public Page<StUser> getUserByDeptId(StUser user){
+    public RO<StUser> getUserByDeptId(StUser user){
         Page<StUser> page = stUserService.selectUserByDeptId(new Page<>(1, 1),user);
-        return page;
+        return new RO(page);
     }
 }
