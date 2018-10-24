@@ -2,17 +2,21 @@ package com.bob.common.vo;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bob.common.constant.CONSTANT;
-import lombok.Data;
+import com.bob.common.constant.ERRORCODE;
 
 import java.io.Serializable;
 import java.util.HashMap;
 
-@Data
 public class RO<T> extends HashMap<String, Object> implements Serializable {
 
     public void  setError(String code ,String message){
         put(CONSTANT.RETURN_MESSAGE_KEY.CODE,code);
         put(CONSTANT.RETURN_MESSAGE_KEY.MSG,message);
+    }
+
+    public void  setError(ERRORCODE errorCode){
+        put(CONSTANT.RETURN_MESSAGE_KEY.CODE,errorCode.getCode());
+        put(CONSTANT.RETURN_MESSAGE_KEY.MSG,errorCode.getDesc());
     }
 
     public RO(){
