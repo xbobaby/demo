@@ -28,4 +28,9 @@ public class RedissionService {
         RBucket<Object> keyObject = RedissonUtils.getRBucket(redissonClient, cacheKey);
         keyObject.set(object,expire, TimeUnit.SECONDS);
     }
+
+    public boolean delete(String cacheKey){
+        RBucket<Object> keyObject = RedissonUtils.getRBucket(redissonClient, cacheKey);
+        return keyObject.delete();
+    }
 }
