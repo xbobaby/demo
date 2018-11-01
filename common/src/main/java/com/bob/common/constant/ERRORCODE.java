@@ -3,7 +3,9 @@ package com.bob.common.constant;
 public enum ERRORCODE {
 
     /**成功*/
-    SUCCESS("000000","成功");
+    SUCCESS("000000","成功"),
+    /**成功*/
+    FAILED("FFFFFF","失败");
 
     private String code;
     private String desc;
