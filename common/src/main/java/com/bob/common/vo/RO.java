@@ -9,14 +9,16 @@ import java.util.HashMap;
 
 public class RO<T> extends HashMap<String, Object> implements Serializable {
 
-    public void  setError(String code ,String message){
+    public RO setError(String code ,String message){
         put(CONSTANT.RETURN_MESSAGE_KEY.CODE,code);
         put(CONSTANT.RETURN_MESSAGE_KEY.MSG,message);
+        return this;
     }
 
-    public void  setError(ERRORCODE errorCode){
+    public RO setError(ERRORCODE errorCode){
         put(CONSTANT.RETURN_MESSAGE_KEY.CODE,errorCode.getCode());
         put(CONSTANT.RETURN_MESSAGE_KEY.MSG,errorCode.getDesc());
+        return this;
     }
 
     public RO(){
