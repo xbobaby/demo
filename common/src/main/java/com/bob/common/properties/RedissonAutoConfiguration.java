@@ -50,7 +50,8 @@ public class RedissonAutoConfiguration {
     @Bean
     @ConditionalOnProperty(prefix = "redisson",name = "address")
     public RedissonClient redissonSingle() {
-        logger.info("redis single model initialzing");
+        logger.info("[**************redis single model initialzing****************]");
+        logger.info("[**************{}***************]",redssionProperties.getAddress());
         Config config = new Config();
         Logger Logger = LoggerFactory.getLogger(RedissonAutoConfiguration.class);
         SingleServerConfig serverConfig = config.useSingleServer()
