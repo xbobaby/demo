@@ -1,6 +1,6 @@
 package com.bob.common.queue;
 
-import com.bob.common.properties.RocketmqProperties;
+import com.bob.common.config.RocketmqProperties;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;

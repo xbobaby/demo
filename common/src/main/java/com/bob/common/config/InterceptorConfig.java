@@ -1,4 +1,4 @@
-package com.bob.common.properties;
+package com.bob.common.config;
 
 import com.bob.common.interceptor.AuthInterceptor;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.bob.common.properties;
+package com.bob.common.config;
 
 
 import org.apache.commons.lang3.StringUtils;

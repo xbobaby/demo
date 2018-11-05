@@ -1,4 +1,4 @@
-package com.bob.service;
+package com.bob;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;

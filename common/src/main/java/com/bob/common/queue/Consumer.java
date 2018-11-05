@@ -1,6 +1,6 @@
 package com.bob.common.queue;
 
-import com.bob.common.properties.RocketmqProperties;
+import com.bob.common.config.RocketmqProperties;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;

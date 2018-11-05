@@ -1,5 +1,6 @@
 package com.bob.common.vo;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.bob.common.constant.CONSTANT;
 import com.bob.common.constant.ERRORCODE;
@@ -26,6 +27,16 @@ public class RO<T> extends HashMap<String, Object> implements Serializable {
         put(CONSTANT.RETURN_MESSAGE_KEY.MSG,CONSTANT.RETURN_MESSAGE_KEY.DEFAULT_SUCCESS_MSG);
     }
     public RO(Page<T> page){
+/*        this.currentPage=page.getCurrent();
+        this.pageSize=page.getSize();
+        this.paginationTotal=page.getTotal();
+        this.body = page.getRecords();*/
+        put(CONSTANT.RETURN_MESSAGE_KEY.CODE,CONSTANT.RETURN_MESSAGE_KEY.DEFAULT_SUCCESS_CODE);
+        put(CONSTANT.RETURN_MESSAGE_KEY.MSG,CONSTANT.RETURN_MESSAGE_KEY.DEFAULT_SUCCESS_MSG);
+        super.put("page",page);
+    }
+
+    public RO(IPage<T> page){
 /*        this.currentPage=page.getCurrent();
         this.pageSize=page.getSize();
         this.paginationTotal=page.getTotal();

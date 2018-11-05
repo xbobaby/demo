@@ -80,10 +80,10 @@ public class MybatisPlusUtils {
                 return super.processTypeConvert(fieldType);
             }
         });*/
-        dsc.setUrl("jdbc:mysql://192.168.8.94:3306/apstest?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://192.168.196.196:3306/bob?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("apstest");
-        dsc.setPassword("!qazxsw@");
+        dsc.setUsername("bob");
+        dsc.setPassword("bob");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -104,7 +104,7 @@ public class MybatisPlusUtils {
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
 //        strategy.setTablePrefix(new String[] { "tlog_", "tsys_" });// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[] { "st_user" }); // 需要生成的表
+        strategy.setInclude(new String[] { "sys_permission" }); // 需要生成的表
 
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         //strategy.setSuperEntityClass("com.example.mybatisplus.common.BaseEntity");
