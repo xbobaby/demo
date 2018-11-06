@@ -15,8 +15,8 @@ public enum ERRORCODE {
     LOGIN_FAILED_LOCKED("000003","登录失败,账号已锁定！"),
     /**登录失败密码错误*/
     LOGIN_FAILED_PASSWORD("000004","登录失败,密码错误！"),
-    /**登录失败密码错误*/
-    LOGIN_FAILED_NOT_EXIST("000005","登录失败,密码错误！");
+    /**登录失败，用户不存在*/
+    LOGIN_FAILED_NOT_EXIST("000005","登录失败,用户不存在！");
     private String code;
     private String desc;
 
