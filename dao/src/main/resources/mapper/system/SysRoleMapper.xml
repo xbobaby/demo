@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bob.system.mapper.SysRoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bob.system.entity.SysRole">
+    <result column="id" property="id" />
+        <result column="available" property="available" />
+        <result column="description" property="description" />
+        <result column="role" property="role" />
+    </resultMap>
+
+</mapper>
