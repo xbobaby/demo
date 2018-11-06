@@ -11,10 +11,7 @@ import com.bob.system.entity.SysUser;
 import com.bob.system.service.ISysUserService;
 import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.LockedAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,7 +60,7 @@ public class LoginController {
             ro.setError(LOGIN_FAILED_PASSWORD);
         } catch (LockedAccountException e) {
             ro.setError(LOGIN_FAILED_LOCKED);
-        } catch (AuthenticationException e) {
+        } catch (UnknownAccountException e) {
             ro.setError(LOGIN_FAILED_NOT_EXIST);
         } catch (Exception e) {
             e.printStackTrace();
